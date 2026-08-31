@@ -127,6 +127,11 @@ img, svg, video, canvas, audio, iframe, embed, object {
   position: relative;
   width: 100%;
   overflow: hidden;
+  scroll-margin-top: clamp(90px, 14vw, 120px);
+}
+
+section {
+  scroll-margin-top: clamp(90px, 14vw, 120px);
 }
 
 /* ========================================

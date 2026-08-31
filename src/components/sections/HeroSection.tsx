@@ -15,8 +15,12 @@ export default function HeroSection() {
     <section
       id="hero"
       ref={ref}
-      className="relative min-h-screen w-full overflow-hidden flex items-center pt-24 pb-16 md:pt-32 md:pb-24 text-[var(--text-primary)]"
-      style={{ background: "var(--bg-primary)" }}
+      className="relative min-h-screen w-full overflow-hidden flex items-center text-[var(--text-primary)]"
+      style={{
+        background: "var(--bg-primary)",
+        paddingTop: "clamp(8.5rem, 22vw, 10.5rem)",
+        paddingBottom: "clamp(3.5rem, 6vw, 6rem)",
+      }}
     >
       {/* Sparkle particle canvas */}
       <SparkleCanvas />
