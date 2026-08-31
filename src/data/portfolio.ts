@@ -93,7 +93,7 @@ export const personalInfo = {
     "Passionate about building web applications and hardware-integrated systems, currently pursuing Computer Science Engineering at Lovely Professional University.",
   aboutParagraph:
     "I am a Computer Science and Engineering undergraduate at Lovely Professional University with a strong passion for developing responsive web applications and hardware-integrated systems. My technical interests span full-stack development, algorithms, and cyber-physical embedded systems—combining modern frameworks like React and Node.js with microcontrollers like Arduino. My career goal is to architect robust, scalable software and intelligent IoT solutions that solve real-world problems and bridge digital experiences with physical computing.",
-  email: "shaileshpratapsingh@gmail.com",
+  email: "shaileshpratap668@gmail.com",
   phone: "+91 8887516069",
   location: "Phagwara, Punjab / Lucknow, Uttar Pradesh",
   status: "Available for opportunities",
@@ -121,7 +121,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: "Email",
-    url: "mailto:shaileshpratapsingh@gmail.com",
+    url: "mailto:shaileshpratap668@gmail.com",
     icon: "email",
   },
   {
