@@ -74,6 +74,42 @@ img, svg, video, canvas, audio, iframe, embed, object {
 }
 
 /* ========================================
+   Responsive Nav Media Helpers
+   ======================================== */
+.desktop-nav-links {
+  display: none !important;
+}
+
+.mobile-sliding-bar {
+  display: flex !important;
+}
+
+.mobile-menu-btn {
+  display: flex !important;
+}
+
+@media (min-width: 1024px) {
+  .desktop-nav-links {
+    display: flex !important;
+  }
+  .mobile-sliding-bar {
+    display: none !important;
+  }
+  .mobile-menu-btn {
+    display: none !important;
+  }
+}
+
+/* Hide scrollbar for sliding nav ribbon */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ========================================
    Responsive Layout Containers
    ======================================== */
 .site-container {
