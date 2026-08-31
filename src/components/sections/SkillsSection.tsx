@@ -25,24 +25,25 @@ export default function SkillsSection() {
           style={{
             position: "absolute",
             transform: `translate(${x}px, ${y}px)`,
-            left: "calc(50% - 22px)",
-            top: "calc(50% - 22px)",
+            left: "calc(50% - 20px)",
+            top: "calc(50% - 20px)",
             zIndex: isHovered ? 40 : 20,
             transition: "all 0.3s ease",
           }}
           onMouseEnter={() => setHoveredSkill(skill.name)}
           onMouseLeave={() => setHoveredSkill(null)}
+          onClick={() => setHoveredSkill(hoveredSkill === skill.name ? null : skill.name)}
         >
           <div
             style={{
               position: "relative",
-              width: "44px",
-              height: "44px",
+              width: "40px",
+              height: "40px",
               borderRadius: "50%",
               border: `1px solid ${isHovered ? glowColor : "rgba(255, 255, 255, 0.15)"}`,
               background: isHovered ? "var(--bg-primary)" : "var(--bg-card)",
-              boxShadow: isHovered ? `0 0 18px ${glowColor}` : `0 0 8px ${glowColor}30`,
-              transform: isHovered ? "scale(1.2)" : "scale(1)",
+              boxShadow: isHovered ? `0 0 16px ${glowColor}` : `0 0 8px ${glowColor}25`,
+              transform: isHovered ? "scale(1.18)" : "scale(1)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -52,7 +53,7 @@ export default function SkillsSection() {
           >
             <span
               style={{
-                fontSize: "0.7rem",
+                fontSize: "0.65rem",
                 fontWeight: 700,
                 fontFamily: "monospace",
                 color: skill.color,
@@ -67,12 +68,12 @@ export default function SkillsSection() {
             <div
               style={{
                 position: "absolute",
-                bottom: "-32px",
+                bottom: "-30px",
                 left: "50%",
                 transform: "translateX(-50%)",
                 fontSize: "0.7rem",
                 fontFamily: "monospace",
-                padding: "0.25rem 0.6rem",
+                padding: "0.2rem 0.5rem",
                 borderRadius: "6px",
                 whiteSpace: "nowrap",
                 backgroundColor: "var(--bg-secondary)",
@@ -106,8 +107,8 @@ export default function SkillsSection() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            gap: "3rem",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))",
+            gap: "clamp(2rem, 5vw, 3rem)",
             alignItems: "center",
           }}
         >
@@ -117,13 +118,14 @@ export default function SkillsSection() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              width: "100%",
             }}
           >
             <div
               style={{
                 position: "relative",
                 width: "100%",
-                maxWidth: "440px",
+                maxWidth: "380px",
                 aspectRatio: "1/1",
                 borderRadius: "2rem",
                 overflow: "hidden",
@@ -133,6 +135,7 @@ export default function SkillsSection() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                margin: "0 auto",
               }}
             >
               {/* Center Hub */}
@@ -140,12 +143,12 @@ export default function SkillsSection() {
                 style={{
                   position: "relative",
                   zIndex: 30,
-                  width: "70px",
-                  height: "70px",
+                  width: "60px",
+                  height: "60px",
                   borderRadius: "50%",
                   padding: "2px",
                   background: "linear-gradient(135deg, #00F0FF, #8B5CF6, #FF6B35)",
-                  boxShadow: "0 0 30px rgba(139,92,246,0.5)",
+                  boxShadow: "0 0 25px rgba(139,92,246,0.5)",
                 }}
               >
                 <div
@@ -160,7 +163,7 @@ export default function SkillsSection() {
                     justifyContent: "center",
                   }}
                 >
-                  <span style={{ fontSize: "0.75rem", fontFamily: "monospace", fontWeight: 800, color: "#00F0FF" }}>TECH</span>
+                  <span style={{ fontSize: "0.7rem", fontFamily: "monospace", fontWeight: 800, color: "#00F0FF" }}>TECH</span>
                 </div>
               </div>
 
@@ -168,38 +171,35 @@ export default function SkillsSection() {
               <div
                 style={{
                   position: "absolute",
-                  width: "170px",
-                  height: "170px",
+                  width: "150px",
+                  height: "150px",
                   borderRadius: "50%",
                   border: "1px solid rgba(0, 240, 255, 0.3)",
-                  boxShadow: "0 0 16px rgba(0, 240, 255, 0.1)",
                 }}
               />
-              {renderRingSkills(orbitalSkills.inner, 85, "#00F0FF")}
+              {renderRingSkills(orbitalSkills.inner, 75, "#00F0FF")}
 
               <div
                 style={{
                   position: "absolute",
-                  width: "280px",
-                  height: "280px",
+                  width: "240px",
+                  height: "240px",
                   borderRadius: "50%",
                   border: "1px solid rgba(139, 92, 246, 0.3)",
-                  boxShadow: "0 0 16px rgba(139, 92, 246, 0.1)",
                 }}
               />
-              {renderRingSkills(orbitalSkills.middle, 140, "#8B5CF6")}
+              {renderRingSkills(orbitalSkills.middle, 120, "#8B5CF6")}
 
               <div
                 style={{
                   position: "absolute",
-                  width: "380px",
-                  height: "380px",
+                  width: "330px",
+                  height: "330px",
                   borderRadius: "50%",
                   border: "1px solid rgba(255, 107, 53, 0.25)",
-                  boxShadow: "0 0 16px rgba(255, 107, 53, 0.1)",
                 }}
               />
-              {renderRingSkills(orbitalSkills.outer, 190, "#FF6B35")}
+              {renderRingSkills(orbitalSkills.outer, 165, "#FF6B35")}
             </div>
           </div>
 
@@ -208,7 +208,8 @@ export default function SkillsSection() {
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: "1rem",
+              gap: "0.85rem",
+              width: "100%",
             }}
           >
             {skillCategories.map((cat, idx) => (
@@ -216,14 +217,14 @@ export default function SkillsSection() {
                 key={idx}
                 className="portfolio-card"
                 style={{
-                  padding: "1.25rem 1.5rem",
+                  padding: "1rem 1.25rem",
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.75rem" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.6rem" }}>
                   <span
                     style={{
-                      width: "8px",
-                      height: "8px",
+                      width: "7px",
+                      height: "7px",
                       borderRadius: "50%",
                       backgroundColor: cat.color,
                       boxShadow: `0 0 8px ${cat.color}`,
@@ -231,7 +232,7 @@ export default function SkillsSection() {
                   />
                   <h3
                     style={{
-                      fontSize: "0.85rem",
+                      fontSize: "0.8rem",
                       fontWeight: 800,
                       textTransform: "uppercase",
                       letterSpacing: "0.1em",
@@ -242,17 +243,17 @@ export default function SkillsSection() {
                   </h3>
                 </div>
 
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
                   {cat.skills.map((skill, sIdx) => (
                     <span
                       key={sIdx}
                       style={{
-                        padding: "0.35rem 0.85rem",
+                        padding: "0.25rem 0.75rem",
                         borderRadius: "9999px",
-                        fontSize: "0.8rem",
+                        fontSize: "0.75rem",
                         fontWeight: 600,
                         backgroundColor: `${cat.color}15`,
-                        border: `1px solid ${cat.color}40`,
+                        border: `1px solid ${cat.color}35`,
                         color: "var(--text-primary)",
                       }}
                     >

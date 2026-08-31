@@ -37,17 +37,19 @@
 }
 
 /* ========================================
-   Base Reset & Typography
+   Base Reset & Mobile-First Foundation
    ======================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -57,6 +59,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
   line-height: 1.6;
+  min-width: 320px;
 }
 
 ::selection {
@@ -64,30 +67,30 @@ body {
   color: #fff;
 }
 
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* ========================================
-   Layout Containers
+   Responsive Layout Containers
    ======================================== */
 .site-container {
   width: 100%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: clamp(1rem, 4vw, 2rem);
+  padding-right: clamp(1rem, 4vw, 2rem);
 }
 
 .section-wrapper {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: clamp(4rem, 8vw, 7.5rem);
+  padding-bottom: clamp(4rem, 8vw, 7.5rem);
   position: relative;
   width: 100%;
-}
-
-@media (min-width: 768px) {
-  .section-wrapper {
-    padding-top: 7.5rem;
-    padding-bottom: 7.5rem;
-  }
+  overflow: hidden;
 }
 
 /* ========================================
@@ -98,24 +101,25 @@ body {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 4rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 0.5rem;
 }
 
 .section-badge-tag {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.75rem;
+  font-size: clamp(0.7rem, 1.5vw, 0.75rem);
   font-weight: 700;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--accent-cyan);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .section-main-title {
-  font-size: 2.25rem;
+  font-size: clamp(1.85rem, 5vw, 3rem);
   font-weight: 900;
   letter-spacing: -0.025em;
   line-height: 1.2;
@@ -123,22 +127,16 @@ body {
   margin-bottom: 0.75rem;
 }
 
-@media (min-width: 768px) {
-  .section-main-title {
-    font-size: 3rem;
-  }
-}
-
 .section-line-accent {
-  width: 5rem;
+  width: 4.5rem;
   height: 4px;
   border-radius: 9999px;
   background: linear-gradient(90deg, #00F0FF, #8B5CF6, #FF6B35);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .section-subtitle-text {
-  font-size: 1.05rem;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
   color: var(--text-secondary);
   line-height: 1.7;
 }
@@ -151,14 +149,15 @@ body {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
-  border-radius: 1.5rem;
+  border-radius: clamp(1rem, 2.5vw, 1.5rem);
   box-shadow: var(--glass-shadow);
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
 }
 
 .portfolio-card:hover {
   border-color: rgba(0, 240, 255, 0.4);
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: 0 16px 40px rgba(0, 240, 255, 0.12);
 }
 
@@ -194,22 +193,15 @@ body {
 
 @keyframes float-1 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(30px, -40px) scale(1.1); }
-  50% { transform: translate(-20px, -60px) scale(0.95); }
-  75% { transform: translate(40px, -20px) scale(1.05); }
+  25% { transform: translate(20px, -25px) scale(1.05); }
+  50% { transform: translate(-15px, -35px) scale(0.98); }
+  75% { transform: translate(25px, -15px) scale(1.02); }
 }
 
 @keyframes float-2 {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-40px, 30px) scale(1.08); }
-  66% { transform: translate(30px, -30px) scale(0.92); }
-}
-
-@keyframes float-3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(-30px, 40px) scale(0.95); }
-  50% { transform: translate(40px, 20px) scale(1.1); }
-  75% { transform: translate(-20px, -30px) scale(1.02); }
+  33% { transform: translate(-25px, 20px) scale(1.05); }
+  66% { transform: translate(20px, -20px) scale(0.95); }
 }
 
 .animate-float-1 {
@@ -218,8 +210,4 @@ body {
 
 .animate-float-2 {
   animation: float-2 25s ease-in-out infinite;
-}
-
-.animate-float-3 {
-  animation: float-3 22s ease-in-out infinite;
 }
