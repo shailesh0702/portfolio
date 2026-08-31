@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+/* ========================================
+   CSS Custom Properties — Theme System
+   ======================================== */
+:root {
+  /* Light theme */
+  --bg-primary: #FAFAFA;
+  --bg-secondary: #F1F5F9;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --text-primary: #0F172A;
+  --text-secondary: #64748B;
+  --border-color: rgba(226, 232, 240, 0.9);
+  --accent-cyan: #00F0FF;
+  --accent-purple: #8B5CF6;
+  --accent-orange: #FF6B35;
+  --accent-green: #10B981;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(226, 232, 240, 0.9);
+  --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.dark {
+  --bg-primary: #080B11;
+  --bg-secondary: #0F172A;
+  --bg-card: rgba(15, 23, 42, 0.75);
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --border-color: rgba(148, 163, 184, 0.15);
+  --accent-cyan: #00F0FF;
+  --accent-purple: #8B5CF6;
+  --accent-orange: #FF6B35;
+  --accent-green: #10B981;
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --glass-border: rgba(148, 163, 184, 0.15);
+  --glass-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+}
+
+/* ========================================
+   Base Reset & Typography
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+::selection {
+  background: rgba(0, 240, 255, 0.3);
+  color: #fff;
+}
+
+/* ========================================
+   Layout Containers
+   ======================================== */
+.site-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.section-wrapper {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .section-wrapper {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+  }
+}
+
+/* ========================================
+   Section Header Standard
+   ======================================== */
+.section-header-box {
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-badge-tag {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  margin-bottom: 0.75rem;
+}
+
+.section-main-title {
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .section-main-title {
+    font-size: 3rem;
+  }
+}
+
+.section-line-accent {
+  width: 5rem;
+  height: 4px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #00F0FF, #8B5CF6, #FF6B35);
+  margin-bottom: 1.25rem;
+}
+
+.section-subtitle-text {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ========================================
+   Glassmorphism Cards
+   ======================================== */
+.portfolio-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.5rem;
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+  border-color: rgba(0, 240, 255, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 240, 255, 0.12);
+}
+
+/* ========================================
+   Custom Scrollbar
+   ======================================== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00F0FF, #8B5CF6, #FF6B35);
+  border-radius: 3px;
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -40px) scale(1.1); }
+  50% { transform: translate(-20px, -60px) scale(0.95); }
+  75% { transform: translate(40px, -20px) scale(1.05); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, 30px) scale(1.08); }
+  66% { transform: translate(30px, -30px) scale(0.92); }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-30px, 40px) scale(0.95); }
+  50% { transform: translate(40px, 20px) scale(1.1); }
+  75% { transform: translate(-20px, -30px) scale(1.02); }
+}
+
+.animate-float-1 {
+  animation: float-1 20s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-2 25s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: float-3 22s ease-in-out infinite;
+}

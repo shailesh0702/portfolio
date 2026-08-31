@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shailesh Pratap Singh | Full-Stack & Embedded Systems Developer</title>
+  <meta name="description" content="Portfolio of Shailesh Pratap Singh - B.Tech CSE Student, Full-Stack & Embedded Systems Developer." />
+  
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-primary: #0a0c14;
+      --bg-secondary: #111827;
+      --bg-card: rgba(17, 24, 39, 0.7);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --border-color: rgba(148, 163, 184, 0.15);
+      --accent-cyan: #00f0ff;
+      --accent-purple: #8b5cf6;
+      --accent-orange: #ff6b35;
+      --accent-green: #10b981;
+      --glass-bg: rgba(17, 24, 39, 0.65);
+      --glass-border: rgba(148, 163, 184, 0.14);
+      --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    html.light {
+      --bg-primary: #fafafa;
+      --bg-secondary: #f1f5f9;
+      --bg-card: rgba(255, 255, 255, 0.85);
+      --text-primary: #0f172a;
+      --text-secondary: #64748b;
+      --border-color: #e2e8f0;
+      --glass-bg: rgba(255, 255, 255, 0.8);
+      --glass-border: rgba(226, 232, 240, 0.9);
+      --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      line-height: 1.6;
+    }
+
+    font-mono, pre, code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-primary);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple), var(--accent-orange));
+      border-radius: 3px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Typography */
+    .gradient-text {
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple), var(--accent-orange));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      color: var(--accent-cyan);
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 900;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+
+    .section-divider {
+      width: 5rem;
+      height: 4px;
+      border-radius: 9999px;
+      margin: 0 auto 1.5rem auto;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple), var(--accent-orange));
+    }
+
+    .section-desc {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+    }
+
+    /* Header & Nav */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: 70px;
+      background: rgba(10, 12, 20, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--glass-border);
+      display: flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    html.light header {
+      background: rgba(250, 250, 250, 0.85);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .logo-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple), var(--accent-orange));
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.85rem;
+      box-shadow: 0 0 16px rgba(0, 240, 255, 0.4);
+    }
+
+    .nav-links {
+      display: none;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    @media (min-width: 1024px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--accent-cyan);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .theme-toggle-btn {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      color: var(--text-primary);
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: all 0.2s;
+    }
+
+    .theme-toggle-btn:hover {
+      border-color: var(--accent-cyan);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      color: #fff;
+      border: none;
+      box-shadow: 0 0 24px rgba(0, 240, 255, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 32px rgba(139, 92, 246, 0.5);
+    }
+
+    .btn-outline {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      color: var(--text-primary);
+      backdrop-filter: blur(12px);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent-cyan);
+      background: rgba(0, 240, 255, 0.08);
+      transform: translateY(-2px);
+    }
+
+    /* Sections */
+    section {
+      padding: 6.5rem 0;
+      position: relative;
+    }
+
+    /* Hero Section */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 7rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-green);
+      box-shadow: 0 0 8px var(--accent-green);
+    }
+
+    .hero-name {
+      font-size: 2.75rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero-name {
+        font-size: 4.25rem;
+      }
+    }
+
+    .hero-tagline {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      margin-bottom: 1rem;
+    }
+
+    .hero-typing {
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      min-height: 2rem;
+    }
+
+    .hero-intro {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 580px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 9999px;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .social-btn:hover {
+      color: var(--accent-cyan);
+      border-color: var(--accent-cyan);
+    }
+
+    /* Hero Portrait with Animated Neon Border */
+    .portrait-card {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      height: 480px;
+      margin: 0 auto;
+      border-radius: 2rem;
+      padding: 6px;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple), var(--accent-orange));
+      box-shadow: 0 0 40px rgba(0, 240, 255, 0.25);
+    }
+
+    .portrait-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 1.8rem;
+      overflow: hidden;
+      background: #0b1220;
+      position: relative;
+    }
+
+    .portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    /* Terminal Window */
+    .terminal-window {
+      border-radius: 1.25rem;
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      background: #0b1220;
+      box-shadow: var(--glass-shadow);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+    }
+
+    .terminal-header {
+      background: #111827;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .term-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .term-red { background: #ff5f56; }
+    .term-yellow { background: #ffbd2e; }
+    .term-green { background: #27c93f; }
+
+    .terminal-title {
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      margin-left: 0.5rem;
+    }
+
+    .terminal-body {
+      padding: 1.25rem;
+      color: #86efac;
+      line-height: 1.8;
+      min-height: 320px;
+    }
+
+    .term-prompt {
+      color: var(--accent-purple);
+    }
+    .term-cmd {
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+    .term-out {
+      color: #cbd5e1;
+      padding-left: 1rem;
+    }
+
+    /* Cards & Grids */
+    .card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      backdrop-filter: blur(20px);
+      box-shadow: var(--glass-shadow);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(0, 240, 255, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    @media (min-width: 768px) {
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Skill Category Badges */
+    .skill-pill {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin: 0.25rem;
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple), var(--accent-orange));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2rem;
+      top: 0.25rem;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg-primary);
+      border: 2px solid var(--accent-cyan);
+      box-shadow: 0 0 10px var(--accent-cyan);
+    }
+
+    /* Form */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-label {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 0.85rem 1.25rem;
+      border-radius: 1rem;
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--accent-cyan);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2.5rem 0;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header>
+    <div class="container nav-container">
+      <a href="#hero" class="logo">
+        <div class="logo-badge">SPS</div>
+        <span>Shailesh<span style="color: var(--accent-cyan)">.dev</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle-btn" title="Toggle Dark/Light Mode">🌙</button>
+        <a href="#contact" class="btn btn-primary" style="padding: 0.45rem 1.25rem; font-size: 0.8rem;">Contact Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. Hero Section -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            <span>Available for opportunities</span>
+          </div>
+
+          <h1 class="hero-name">
+            Shailesh<br />
+            <span class="gradient-text">Pratap Singh</span>
+          </h1>
+
+          <div class="hero-tagline">
+            B.Tech CSE Student | Full-Stack & Embedded Systems Developer
+          </div>
+
+          <div class="hero-typing">
+            Passionate about <span id="typedElement" style="font-weight: 700; color: var(--accent-cyan)"></span>
+          </div>
+
+          <p class="hero-intro">
+            Passionate about building web applications and hardware-integrated systems, currently pursuing Computer Science Engineering at Lovely Professional University.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <span>View Projects</span>
+              <span>↓</span>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <span>Contact Me</span>
+              <span>→</span>
+            </a>
+          </div>
+
+          <div class="social-links">
+            <a href="https://github.com/shailesh0702" target="_blank" rel="noopener noreferrer" class="social-btn">
+              <span>GitHub</span>
+              <span>↗</span>
+            </a>
+            <a href="https://www.linkedin.com/in/shailesh-pratap-singh-383bb2399/" target="_blank" rel="noopener noreferrer" class="social-btn">
+              <span>LinkedIn</span>
+              <span>↗</span>
+            </a>
+            <a href="mailto:shaileshpratapsingh@gmail.com" class="social-btn">
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="portrait-card">
+            <div class="portrait-inner">
+              <img src="./shailesh.jpg" alt="Shailesh Pratap Singh" class="portrait-img" onerror="this.src='./my_pic.jpeg'" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. About Me Section -->
+  <section id="about">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <p class="section-tag">Background & Vision</p>
+        <h2 class="section-title">About Me</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Education background, passion for software and embedded systems, and future career objectives.</p>
+      </div>
+
+      <div class="grid-2" style="align-items: start;">
+        <div class="card" style="display: flex; flex-direction: column; gap: 1.25rem;">
+          <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--accent-cyan);">Engineering Journey</h3>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            I am a Computer Science and Engineering undergraduate at <strong>Lovely Professional University (LPU)</strong> with a deep passion for building high-performance web applications and hardware-integrated embedded systems.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            My technical focus unites full-stack web development (React, Node.js, REST APIs, Databases) with physical microcontroller computing (Arduino UNO, RFID RC522, ultrasonic speed telemetry, I2C displays). 
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.8;">
+            <strong>Career Goals:</strong> To architect resilient, user-centric software platforms and cyber-physical IoT systems that solve critical real-world challenges and seamlessly bridge the digital and physical worlds.
+          </p>
+        </div>
+
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="term-dot term-red"></div>
+            <div class="term-dot term-yellow"></div>
+            <div class="term-dot term-green"></div>
+            <span class="terminal-title">shailesh@dev:~$</span>
+          </div>
+          <div class="terminal-body">
+            <div><span class="term-prompt">➜</span> <span class="term-cmd">whoami</span></div>
+            <div class="term-out">Shailesh Pratap Singh — Full-Stack & Embedded Systems Developer</div>
+            <br />
+            <div><span class="term-prompt">➜</span> <span class="term-cmd">cat education.txt</span></div>
+            <div class="term-out">B.Tech CSE @ Lovely Professional University (TGPA: 7.37)</div>
+            <br />
+            <div><span class="term-prompt">➜</span> <span class="term-cmd">cat core_interests.txt</span></div>
+            <div class="term-out">• Web Applications (React, Node.js, REST APIs)</div>
+            <div class="term-out">• Embedded Systems (Arduino, RFID RC522, Sensors)</div>
+            <div class="term-out">• Data Structures, OOP & Algorithms</div>
+            <br />
+            <div><span class="term-prompt">➜</span> <span class="term-cmd">echo $GOAL</span></div>
+            <div class="term-out">Building scalable software and smart IoT prototypes! 🚀</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <p class="section-tag">Technical Arsenal</p>
+        <h2 class="section-title">Skills & Capabilities</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Grouped into 5 distinct categories covering programming, web development, developer tools, core concepts, and embedded hardware.</p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Programming -->
+        <div class="card">
+          <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--accent-cyan); margin-bottom: 1rem;">💻 Programming</h3>
+          <div>
+            <span class="skill-pill">C</span>
+            <span class="skill-pill">C++</span>
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">SQL</span>
+          </div>
+        </div>
+
+        <!-- Web Development -->
+        <div class="card">
+          <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--accent-purple); margin-bottom: 1rem;">🌐 Web Development</h3>
+          <div>
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">React</span>
+            <span class="skill-pill">Node.js</span>
+          </div>
+        </div>
+
+        <!-- Tools & Platforms -->
+        <div class="card">
+          <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--accent-orange); margin-bottom: 1rem;">🛠️ Tools & Platforms</h3>
+          <div>
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">GitHub</span>
+            <span class="skill-pill">VS Code</span>
+            <span class="skill-pill">Arduino IDE</span>
+            <span class="skill-pill">MongoDB</span>
+          </div>
+        </div>
+
+        <!-- Core Concepts -->
+        <div class="card">
+          <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--accent-green); margin-bottom: 1rem;">🧠 Core Concepts</h3>
+          <div>
+            <span class="skill-pill">DSA</span>
+            <span class="skill-pill">OOP</span>
+            <span class="skill-pill">DBMS</span>
+            <span class="skill-pill">Software Engineering</span>
+          </div>
+        </div>
+
+        <!-- Hardware & Embedded -->
+        <div class="card" style="grid-column: 1 / -1;">
+          <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--accent-cyan); margin-bottom: 1rem;">⚡ Hardware & Embedded Systems</h3>
+          <div>
+            <span class="skill-pill">Arduino UNO</span>
+            <span class="skill-pill">RFID RC522</span>
+            <span class="skill-pill">Ultrasonic Sensors</span>
+            <span class="skill-pill">LCD with I2C</span>
+            <span class="skill-pill">Buzzer Alert Modules</span>
+            <span class="skill-pill">Sensor Calibration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <p class="section-tag">Featured Works</p>
+        <h2 class="section-title">Projects</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Software applications and smart IoT embedded prototypes.</p>
+      </div>
+
+      <div class="grid-2">
+        <!-- Project 1: MindCare -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <span style="font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--accent-cyan); background: rgba(0,240,255,0.15); padding: 0.25rem 0.75rem; border-radius: 9999px;">Full-Stack</span>
+              <span style="font-size: 0.8rem; color: var(--text-secondary)">Oct 2025</span>
+            </div>
+            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">MindCare – Mental Wellness Platform</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem; font-size: 0.95rem;">
+              Mental-wellness application focused on support resources, self-reflection, and guided experiences, with reusable UI components and intuitive user journeys.
+            </p>
+            <ul style="color: var(--text-secondary); font-size: 0.85rem; padding-left: 1.25rem; margin-bottom: 1.5rem; line-height: 1.7;">
+              <li>Devised a focused mental-wellness application that streamlined access to support resources and guided user reflection.</li>
+              <li>Tailored reusable UI components around intuitive, low-friction user journeys.</li>
+              <li>Synchronized application state and database flows to maintain data consistency.</li>
+            </ul>
+          </div>
+          <div>
+            <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-bottom: 1rem;">
+              <span class="skill-pill">React</span>
+              <span class="skill-pill">Node.js</span>
+              <span class="skill-pill">REST APIs</span>
+              <span class="skill-pill">Database</span>
+            </div>
+            <a href="https://github.com/shailesh0702" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%; font-size: 0.85rem;">View Repository ↗</a>
+          </div>
+        </div>
+
+        <!-- Project 2: Speed Sensor with RFID -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <span style="font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--accent-orange); background: rgba(255,107,53,0.15); padding: 0.25rem 0.75rem; border-radius: 9999px;">Embedded IoT</span>
+              <span style="font-size: 0.8rem; color: var(--text-secondary)">Dec 2025</span>
+            </div>
+            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">Speed Sensor with RFID Using Ultrasonic Sensor</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem; font-size: 0.95rem;">
+              Smart speed-measurement prototype — RFID RC522 verifies authorized users/vehicles, calculates speed from timing between two ultrasonic sensors, I2C LCD shows access status and speed, buzzer alerts on access-denied.
+            </p>
+            <ul style="color: var(--text-secondary); font-size: 0.85rem; padding-left: 1.25rem; margin-bottom: 1.5rem; line-height: 1.7;">
+              <li>Developed dual-sensor speed measurement prototype with RFID RC522 vehicle identification.</li>
+              <li>Calculated velocity from ultrasonic pulse timing across a calibrated distance.</li>
+              <li>Integrated 16x2 I2C LCD for telemetry display and buzzer for unauthorized access alerts.</li>
+            </ul>
+          </div>
+          <div>
+            <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-bottom: 1rem;">
+              <span class="skill-pill">C/C++</span>
+              <span class="skill-pill">Arduino UNO</span>
+              <span class="skill-pill">MFRC522 RFID</span>
+              <span class="skill-pill">Ultrasonic Sensors</span>
+              <span class="skill-pill">LCD I2C</span>
+            </div>
+            <a href="https://github.com/shailesh0702" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%; font-size: 0.85rem;">View Repository ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Experience Section -->
+  <section id="experience">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <p class="section-tag">Mentorship & Leadership</p>
+        <h2 class="section-title">Experience</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Technical tutoring and workshop leadership.</p>
+      </div>
+
+      <div class="card" style="max-width: 900px; margin: 0 auto;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: start; gap: 1rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+          <div>
+            <span style="font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--accent-orange); background: rgba(255,107,53,0.15); padding: 0.25rem 0.75rem; border-radius: 9999px;">Workshop Instructor</span>
+            <h3 style="font-size: 1.5rem; font-weight: 800; margin-top: 0.5rem;">Python Programming & Coding Practice Workshop</h3>
+            <p style="color: var(--accent-purple); font-size: 0.9rem; font-weight: 600;">Technical Tutoring & Community Workshop</p>
+          </div>
+          <span style="font-size: 0.85rem; font-family: 'JetBrains Mono', monospace; color: var(--accent-cyan); background: rgba(0,240,255,0.12); padding: 0.35rem 0.85rem; border-radius: 9999px;">July 2026</span>
+        </div>
+
+        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+          Conducted Python tutoring workshop covering strings, functions, loops, programming problems, and debugging.
+        </p>
+
+        <div class="grid-2" style="margin-bottom: 1.5rem;">
+          <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 1rem; border: 1px solid var(--border-color); font-size: 0.85rem; color: var(--text-secondary);">
+            ✓ Structured comprehensive problem sets focusing on string manipulation, loops, and conditional execution.
+          </div>
+          <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 1rem; border: 1px solid var(--border-color); font-size: 0.85rem; color: var(--text-secondary);">
+            ✓ Delivered interactive live coding and debugging demonstrations to reinforce algorithmic problem solving.
+          </div>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+          <div>
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">Functions</span>
+            <span class="skill-pill">Loops</span>
+            <span class="skill-pill">Debugging</span>
+            <span class="skill-pill">Mentorship</span>
+          </div>
+          <a href="https://github.com/shailesh0702" target="_blank" rel="noopener noreferrer" style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 700; text-decoration: none;">View Materials ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Certifications Section -->
+  <section id="certifications">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <p class="section-tag">Verified Credentials</p>
+        <h2 class="section-title">Certifications</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Industry and academic credentials in programming and professional development.</p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Cert 1: Infosys -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+              <span style="font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #0070BA; background: rgba(0,112,186,0.15); padding: 0.25rem 0.65rem; border-radius: 9999px;">Infosys Certified</span>
+              <span style="font-size: 0.8rem; color: var(--text-secondary)">June 2026</span>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Python Programming / Springboard Certification</h3>
+            <p style="color: #0070BA; font-size: 0.9rem; font-weight: 600;">Infosys Springboard</p>
+          </div>
+          <div style="border-top: 1px solid var(--border-color); padding-top: 0.75rem; margin-top: 1.5rem; display: flex; justify-content: space-between; font-size: 0.8rem;">
+            <span style="color: var(--text-secondary)">ID: INFY-SPB-PY26</span>
+            <a href="https://infyspringboard.onwingspan.com" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: none; font-weight: 700;">Verify ↗</a>
+          </div>
+        </div>
+
+        <!-- Cert 2: Saylor -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+              <span style="font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #00599C; background: rgba(0,89,156,0.15); padding: 0.25rem 0.65rem; border-radius: 9999px;">Saylor Verified</span>
+              <span style="font-size: 0.8rem; color: var(--text-secondary)">2025</span>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">C++ Certificate</h3>
+            <p style="color: #00599C; font-size: 0.9rem; font-weight: 600;">Saylor Academy</p>
+          </div>
+          <div style="border-top: 1px solid var(--border-color); padding-top: 0.75rem; margin-top: 1.5rem; display: flex; justify-content: space-between; font-size: 0.8rem;">
+            <span style="color: var(--text-secondary)">Verified</span>
+            <a href="https://learn.saylor.org" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: none; font-weight: 700;">Verify ↗</a>
+          </div>
+        </div>
+
+        <!-- Cert 3: Coursera -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+              <span style="font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: #0056D2; background: rgba(0,86,210,0.15); padding: 0.25rem 0.65rem; border-radius: 9999px;">Coursera Certified</span>
+              <span style="font-size: 0.8rem; color: var(--text-secondary)">Nov 2025</span>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Time Management Certificate</h3>
+            <p style="color: #0056D2; font-size: 0.9rem; font-weight: 600;">Coursera</p>
+          </div>
+          <div style="border-top: 1px solid var(--border-color); padding-top: 0.75rem; margin-top: 1.5rem; display: flex; justify-content: space-between; font-size: 0.8rem;">
+            <span style="color: var(--text-secondary)">Verified</span>
+            <a href="https://www.coursera.org" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: none; font-weight: 700;">Verify ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Achievements Section -->
+  <section id="achievements">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <p class="section-tag">Recognitions</p>
+        <h2 class="section-title">Achievements</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Key milestones in leadership, technical prototypes, and peer teaching.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">👥</div>
+          <span style="font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--accent-cyan); background: rgba(0,240,255,0.15); padding: 0.2rem 0.6rem; border-radius: 9999px;">Leadership</span>
+          <h3 style="font-size: 1.2rem; font-weight: 800; margin: 0.75rem 0 0.5rem 0;">Organized Multiple School Events as Student Coordinator</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+            Led cross-functional student teams, logistics, and scheduling for school-wide technical and cultural events.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">⚡</div>
+          <span style="font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--accent-orange); background: rgba(255,107,53,0.15); padding: 0.2rem 0.6rem; border-radius: 9999px;">Hardware</span>
+          <h3 style="font-size: 1.2rem; font-weight: 800; margin: 0.75rem 0 0.5rem 0;">Built & Documented Arduino RFID & Ultrasonic Speed Sensor</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+            Engineered and documented an end-to-end embedded speed detection system with RFID authorization and LCD display.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="font-size: 2rem; margin-bottom: 1rem;">⭐</div>
+          <span style="font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; font-weight: 700; color: var(--accent-purple); background: rgba(139,92,246,0.15); padding: 0.2rem 0.6rem; border-radius: 9999px;">Community</span>
+          <h3 style="font-size: 1.2rem; font-weight: 800; margin: 0.75rem 0 0.5rem 0;">Conducted Python Programming Teaching Sessions</h3>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;">
+            Conducted interactive Python programming sessions as part of a Community Development Project for beginner coders.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Education Section -->
+  <section id="education">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <p class="section-tag">Academic Journey</p>
+        <h2 class="section-title">Education</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Timeline of academic qualifications and institutional milestones.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- LPU -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="card">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: start; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <h3 style="font-size: 1.3rem; font-weight: 800;">Lovely Professional University</h3>
+              <span style="font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; color: var(--accent-cyan); background: rgba(0,240,255,0.12); padding: 0.25rem 0.75rem; border-radius: 9999px;">2025 – Present</span>
+            </div>
+            <p style="font-weight: 600; color: var(--accent-cyan); margin-bottom: 0.5rem;">Bachelor of Technology in Computer Science and Engineering (B.Tech CSE)</p>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.75rem;">Phagwara, Punjab</p>
+            <div style="display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; font-weight: 700; color: var(--accent-orange); background: rgba(255,107,53,0.15); padding: 0.3rem 0.8rem; border-radius: 9999px;">
+              TGPA: 7.37
+            </div>
+          </div>
+        </div>
+
+        <!-- Intermediate -->
+        <div class="timeline-item">
+          <div class="timeline-dot" style="border-color: var(--accent-purple); box-shadow: 0 0 10px var(--accent-purple);"></div>
+          <div class="card">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: start; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <h3 style="font-size: 1.3rem; font-weight: 800;">Lucknow Public School</h3>
+              <span style="font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; color: var(--accent-purple); background: rgba(139,92,246,0.12); padding: 0.25rem 0.75rem; border-radius: 9999px;">Apr 2024 – May 2025</span>
+            </div>
+            <p style="font-weight: 600; color: var(--accent-purple); margin-bottom: 0.5rem;">Intermediate (PCM — Physics, Chemistry, Mathematics)</p>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.75rem;">Lucknow, Uttar Pradesh</p>
+            <div style="display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; font-weight: 700; color: var(--accent-purple); background: rgba(139,92,246,0.15); padding: 0.3rem 0.8rem; border-radius: 9999px;">
+              Score: 75%
+            </div>
+          </div>
+        </div>
+
+        <!-- Matriculation -->
+        <div class="timeline-item">
+          <div class="timeline-dot" style="border-color: var(--accent-orange); box-shadow: 0 0 10px var(--accent-orange);"></div>
+          <div class="card">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: start; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <h3 style="font-size: 1.3rem; font-weight: 800;">Lucknow Public School</h3>
+              <span style="font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; color: var(--accent-orange); background: rgba(255,107,53,0.12); padding: 0.25rem 0.75rem; border-radius: 9999px;">Apr 2022 – May 2023</span>
+            </div>
+            <p style="font-weight: 600; color: var(--accent-orange); margin-bottom: 0.5rem;">Matriculation (Secondary Education)</p>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.75rem;">Lucknow, Uttar Pradesh</p>
+            <div style="display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; font-weight: 700; color: var(--accent-orange); background: rgba(255,107,53,0.15); padding: 0.3rem 0.8rem; border-radius: 9999px;">
+              Score: 78%
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <p class="section-tag">Get in Touch</p>
+        <h2 class="section-title">Contact Me</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">Have a question or looking to collaborate? Reach out directly.</p>
+      </div>
+
+      <div class="grid-2" style="align-items: start; max-width: 1000px; margin: 0 auto 3rem auto;">
+        <!-- Left: Direct Info -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div class="card">
+            <h4 style="font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 0.5rem;">Email Directly</h4>
+            <a href="mailto:shaileshpratapsingh@gmail.com" style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); text-decoration: none;">shaileshpratapsingh@gmail.com</a>
+          </div>
+
+          <div class="card">
+            <h4 style="font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; color: var(--accent-orange); text-transform: uppercase; margin-bottom: 0.5rem;">Phone / WhatsApp</h4>
+            <a href="tel:+918887516069" style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary); text-decoration: none;">+91 8887516069</a>
+          </div>
+
+          <div class="card">
+            <h4 style="font-size: 0.8rem; font-family: 'JetBrains Mono', monospace; color: var(--accent-purple); text-transform: uppercase; margin-bottom: 0.5rem;">Location & Status</h4>
+            <p style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary);">Phagwara, Punjab / Lucknow, UP</p>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.25rem;">Available for internships, full-time roles & projects.</p>
+          </div>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="card">
+          <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 1rem;">Send a Message</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <label class="form-label" for="formName">Your Name *</label>
+              <input type="text" id="formName" class="form-input" placeholder="Alex Smith" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="formEmail">Email Address *</label>
+              <input type="email" id="formEmail" class="form-input" placeholder="alex@example.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="formMessage">Message *</label>
+              <textarea id="formMessage" class="form-textarea" rows="4" placeholder="Hi Shailesh, I'd like to talk about..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <span>Send Message</span>
+              <span>↗</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem;">
+        <a href="https://github.com/shailesh0702" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); text-decoration: none; font-weight: 600;">GitHub</a>
+        <a href="https://www.linkedin.com/in/shailesh-pratap-singh-383bb2399/" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); text-decoration: none; font-weight: 600;">LinkedIn</a>
+        <a href="mailto:shaileshpratapsingh@gmail.com" style="color: var(--text-secondary); text-decoration: none; font-weight: 600;">Email</a>
+        <a href="tel:+918887516069" style="color: var(--text-secondary); text-decoration: none; font-weight: 600;">Phone</a>
+      </div>
+      <p>© <span id="year"></span> Shailesh Pratap Singh. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // Set Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Dark / Light Theme Toggle
+    const themeBtn = document.getElementById('themeToggle');
+    const htmlEl = document.documentElement;
+
+    themeBtn.addEventListener('click', () => {
+      if (htmlEl.classList.contains('dark')) {
+        htmlEl.classList.remove('dark');
+        htmlEl.classList.add('light');
+        themeBtn.textContent = '☀️';
+      } else {
+        htmlEl.classList.remove('light');
+        htmlEl.classList.add('dark');
+        themeBtn.textContent = '🌙';
+      }
+    });
+
+    // Typing Effect
+    const roles = [
+      'Full-Stack Web Apps',
+      'Embedded IoT Systems',
+      'C++ & Python Software',
+      'Arduino & Sensor Projects'
+    ];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typedEl = document.getElementById('typedElement');
+
+    function type() {
+      const currentRole = roles[roleIndex];
+      if (isDeleting) {
+        typedEl.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typedEl.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let speed = isDeleting ? 40 : 80;
+      if (!isDeleting && charIndex === currentRole.length) {
+        speed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        speed = 400;
+      }
+
+      setTimeout(type, speed);
+    }
+    type();
+
+    // Contact Form Handler
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('formName').value;
+      const email = document.getElementById('formEmail').value;
+      const message = document.getElementById('formMessage').value;
+
+      const subject = encodeURIComponent('Portfolio Contact from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+      window.location.href = 'mailto:shaileshpratapsingh@gmail.com?subject=' + subject + '&body=' + body;
+    });
+
+    // Smooth Scroll & Active Nav Highlights
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - 120) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
