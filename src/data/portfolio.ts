@@ -293,6 +293,15 @@ export const certifications: Certification[] = [
     badgeText: "Infosys Certified",
   },
   {
+    title: "Data Science and Big Data",
+    issuer: "Infosys Springboard",
+    issueDate: "March 2026",
+    credentialId: "INFY-SPB-DSBD26",
+    verifyLink: "https://infyspringboard.onwingspan.com",
+    color: "#0070BA",
+    badgeText: "Infosys Certified",
+  },
+  {
     title: "C++ Certificate",
     issuer: "Saylor Academy",
     issueDate: "2025",
@@ -300,15 +309,6 @@ export const certifications: Certification[] = [
     verifyLink: "https://learn.saylor.org",
     color: "#00599C",
     badgeText: "Saylor Verified",
-  },
-  {
-    title: "Time Management Certificate",
-    issuer: "Coursera",
-    issueDate: "November 2025",
-    credentialId: "COURSERA-TM-2025",
-    verifyLink: "https://www.coursera.org",
-    color: "#0056D2",
-    badgeText: "Coursera Certified",
   },
 ];
 
