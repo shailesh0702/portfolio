@@ -117,7 +117,7 @@ export default function ContactSection() {
 
             {/* Phone Card */}
             <div className="portfolio-card" style={{ padding: "1.75rem" }}>
-              <span style={{ fontSize: "0.75rem", fontFamily: "monospace", color: "#FF6B35", textTransform: "uppercase", fontWeight: 700, display: "block", marginBottom: "0.5rem" }}>
+              <span style={{ fontSize: "0.75rem", fontFamily: "monospace", color: "#00F0FF", textTransform: "uppercase", fontWeight: 700, display: "block", marginBottom: "0.5rem" }}>
                 Phone / WhatsApp
               </span>
               <a
@@ -135,7 +135,7 @@ export default function ContactSection() {
 
             {/* Location & Status Card */}
             <div className="portfolio-card" style={{ padding: "1.75rem" }}>
-              <span style={{ fontSize: "0.75rem", fontFamily: "monospace", color: "#8B5CF6", textTransform: "uppercase", fontWeight: 700, display: "block", marginBottom: "0.5rem" }}>
+              <span style={{ fontSize: "0.75rem", fontFamily: "monospace", color: "#00F0FF", textTransform: "uppercase", fontWeight: 700, display: "block", marginBottom: "0.5rem" }}>
                 Location & Status
               </span>
               <div style={{ fontSize: "1rem", fontWeight: 700, color: "var(--text-primary)" }}>
@@ -280,7 +280,7 @@ export default function ContactSection() {
                   fontWeight: 700,
                   fontSize: "0.95rem",
                   color: "#FFFFFF",
-                  background: "linear-gradient(135deg, #00F0FF, #8B5CF6)",
+                  background: "linear-gradient(135deg, #00F0FF, #0284C7)",
                   boxShadow: "0 0 25px rgba(0, 240, 255, 0.35)",
                   border: "none",
                   cursor: "pointer",

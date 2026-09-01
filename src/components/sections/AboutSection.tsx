@@ -121,7 +121,7 @@ export default function AboutSection() {
                   background: "var(--glass-bg)",
                 }}
               >
-                <div style={{ fontSize: "0.75rem", fontFamily: "monospace", fontWeight: 700, color: "#FF6B35", textTransform: "uppercase", marginBottom: "0.25rem" }}>
+                <div style={{ fontSize: "0.75rem", fontFamily: "monospace", fontWeight: 700, color: "#00F0FF", textTransform: "uppercase", marginBottom: "0.25rem" }}>
                   02 • Embedded Systems
                 </div>
                 <div style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.25rem" }}>
@@ -157,9 +157,9 @@ export default function AboutSection() {
                 borderBottom: "1px solid var(--glass-border)",
               }}
             >
-              <div style={{ width: "11px", height: "11px", borderRadius: "50%", backgroundColor: "#FF5F56" }} />
-              <div style={{ width: "11px", height: "11px", borderRadius: "50%", backgroundColor: "#FFBD2E" }} />
-              <div style={{ width: "11px", height: "11px", borderRadius: "50%", backgroundColor: "#27C93F" }} />
+              <div style={{ width: "11px", height: "11px", borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.2)" }} />
+              <div style={{ width: "11px", height: "11px", borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.2)" }} />
+              <div style={{ width: "11px", height: "11px", borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.2)" }} />
               <span style={{ marginLeft: "0.75rem", fontSize: "0.75rem", color: "var(--text-secondary)" }}>
                 shailesh@portfolio:~$
               </span>
@@ -170,7 +170,7 @@ export default function AboutSection() {
               style={{
                 padding: "1.5rem",
                 background: "linear-gradient(180deg, #0B1220 0%, #111827 100%)",
-                color: "#86EFAC",
+                color: "var(--text-primary)",
                 minHeight: "380px",
                 lineHeight: "1.8",
               }}
@@ -180,13 +180,13 @@ export default function AboutSection() {
                 if (line.startsWith(">")) {
                   return (
                     <div key={idx} style={{ color: "#00F0FF", fontWeight: 700, marginTop: "0.5rem" }}>
-                      <span style={{ color: "#8B5CF6", marginRight: "0.5rem" }}>➜</span>
+                      <span style={{ color: "#00F0FF", marginRight: "0.5rem" }}>➜</span>
                       <span>{line.substring(1).trim()}</span>
                     </div>
                   );
                 }
                 return (
-                  <div key={idx} style={{ color: "#CBD5E1", paddingLeft: "1.25rem", fontSize: "0.85rem" }}>
+                  <div key={idx} style={{ color: "var(--text-secondary)", paddingLeft: "1.25rem", fontSize: "0.85rem" }}>
                     {line}
                   </div>
                 );
@@ -194,14 +194,14 @@ export default function AboutSection() {
 
               {isVisible && (
                 <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginTop: "0.75rem" }}>
-                  <span style={{ color: "#8B5CF6" }}>➜</span>
+                  <span style={{ color: "#00F0FF" }}>➜</span>
                   <span style={{ color: "#00F0FF" }}>~</span>
                   <span
                     style={{
                       display: "inline-block",
                       width: "8px",
                       height: "16px",
-                      backgroundColor: "#86EFAC",
+                      backgroundColor: "#00F0FF",
                       animation: "cursor-blink 0.7s step-end infinite",
                     }}
                   />

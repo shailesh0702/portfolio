@@ -147,8 +147,8 @@ export default function SkillsSection() {
                   height: "60px",
                   borderRadius: "50%",
                   padding: "2px",
-                  background: "linear-gradient(135deg, #00F0FF, #8B5CF6, #FF6B35)",
-                  boxShadow: "0 0 25px rgba(139,92,246,0.5)",
+                  background: "linear-gradient(135deg, #00F0FF, #0284C7)",
+                  boxShadow: "0 0 20px rgba(0, 240, 255, 0.4)",
                 }}
               >
                 <div
@@ -174,7 +174,7 @@ export default function SkillsSection() {
                   width: "150px",
                   height: "150px",
                   borderRadius: "50%",
-                  border: "1px solid rgba(0, 240, 255, 0.3)",
+                  border: "1px solid rgba(0, 240, 255, 0.25)",
                 }}
               />
               {renderRingSkills(orbitalSkills.inner, 75, "#00F0FF")}
@@ -185,10 +185,10 @@ export default function SkillsSection() {
                   width: "240px",
                   height: "240px",
                   borderRadius: "50%",
-                  border: "1px solid rgba(139, 92, 246, 0.3)",
+                  border: "1px solid rgba(0, 240, 255, 0.2)",
                 }}
               />
-              {renderRingSkills(orbitalSkills.middle, 120, "#8B5CF6")}
+              {renderRingSkills(orbitalSkills.middle, 120, "#00F0FF")}
 
               <div
                 style={{
@@ -196,10 +196,10 @@ export default function SkillsSection() {
                   width: "330px",
                   height: "330px",
                   borderRadius: "50%",
-                  border: "1px solid rgba(255, 107, 53, 0.25)",
+                  border: "1px solid rgba(0, 240, 255, 0.15)",
                 }}
               />
-              {renderRingSkills(orbitalSkills.outer, 165, "#FF6B35")}
+              {renderRingSkills(orbitalSkills.outer, 165, "#00F0FF")}
             </div>
           </div>
 

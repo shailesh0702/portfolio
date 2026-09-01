@@ -94,8 +94,8 @@ export default function HeroSection() {
                   width: "8px",
                   height: "8px",
                   borderRadius: "50%",
-                  backgroundColor: "#10B981",
-                  boxShadow: "0 0 10px #10B981",
+                  backgroundColor: "#00F0FF",
+                  boxShadow: "0 0 10px #00F0FF",
                   display: "inline-block",
                 }}
               />
@@ -117,9 +117,7 @@ export default function HeroSection() {
               <span
                 style={{
                   display: "block",
-                  background: "linear-gradient(90deg, #00F0FF, #8B5CF6, #FF6B35)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
+                  color: "#00F0FF",
                   marginTop: "0.2rem",
                 }}
               >
@@ -157,7 +155,7 @@ export default function HeroSection() {
               <span
                 style={{
                   fontWeight: 700,
-                  color: "#8B5CF6",
+                  color: "#00F0FF",
                 }}
               >
                 {typedText}
@@ -219,7 +217,7 @@ export default function HeroSection() {
                   textAlign: "center",
                 }}
               >
-                <div style={{ fontWeight: 800, color: "#FF6B35", fontSize: "clamp(0.8rem, 1.8vw, 0.95rem)" }}>Embedded IoT</div>
+                <div style={{ fontWeight: 800, color: "#00F0FF", fontSize: "clamp(0.8rem, 1.8vw, 0.95rem)" }}>Embedded IoT</div>
                 <div style={{ fontSize: "0.7rem", color: "var(--text-secondary)", marginTop: "2px" }}>Arduino & Sensors</div>
               </div>
               <div
@@ -231,7 +229,7 @@ export default function HeroSection() {
                   textAlign: "center",
                 }}
               >
-                <div style={{ fontWeight: 800, color: "#8B5CF6", fontSize: "clamp(0.8rem, 1.8vw, 0.95rem)" }}>Full Stack</div>
+                <div style={{ fontWeight: 800, color: "#00F0FF", fontSize: "clamp(0.8rem, 1.8vw, 0.95rem)" }}>Full Stack</div>
                 <div style={{ fontSize: "0.7rem", color: "var(--text-secondary)", marginTop: "2px" }}>React & Node.js</div>
               </div>
             </div>
@@ -257,7 +255,7 @@ export default function HeroSection() {
                   fontWeight: 700,
                   fontSize: "clamp(0.85rem, 1.8vw, 0.95rem)",
                   color: "#FFFFFF",
-                  background: "linear-gradient(135deg, #00F0FF, #8B5CF6)",
+                  background: "linear-gradient(135deg, #00F0FF, #0284C7)",
                   boxShadow: "0 0 25px rgba(0, 240, 255, 0.35)",
                   textDecoration: "none",
                   transition: "all 0.3s ease",
@@ -364,9 +362,9 @@ export default function HeroSection() {
                 maxWidth: "clamp(260px, 80vw, 360px)",
                 height: "clamp(350px, 60vh, 480px)",
                 borderRadius: "clamp(1.5rem, 4vw, 2.25rem)",
-                padding: "5px",
-                background: "linear-gradient(135deg, #00F0FF, #8B5CF6, #FF6B35, #10B981)",
-                boxShadow: "0 0 40px rgba(0, 240, 255, 0.25)",
+                padding: "4px",
+                background: "linear-gradient(135deg, #00F0FF, #0284C7)",
+                boxShadow: "0 0 35px rgba(0, 240, 255, 0.25)",
                 margin: "0 auto",
               }}
             >

@@ -26,7 +26,7 @@ export default function Home() {
 
         {/* 2. About Me */}
         <AboutSection />
-        <SectionDivider color="#8B5CF6" />
+        <SectionDivider color="#00F0FF" />
 
         {/* 3. Skills */}
         <SkillsSection />
@@ -34,11 +34,11 @@ export default function Home() {
 
         {/* 4. Projects */}
         <ProjectsSection />
-        <SectionDivider color="#FF6B35" />
+        <SectionDivider color="#00F0FF" />
 
         {/* 5. Experience */}
         <ExperienceSection />
-        <SectionDivider color="#8B5CF6" />
+        <SectionDivider color="#00F0FF" />
 
         {/* 6. Certifications */}
         <CertificationsSection />
@@ -46,11 +46,11 @@ export default function Home() {
 
         {/* 7. Achievements */}
         <AchievementsSection />
-        <SectionDivider color="#FF6B35" />
+        <SectionDivider color="#00F0FF" />
 
         {/* 8. Education */}
         <EducationSection />
-        <SectionDivider color="#8B5CF6" />
+        <SectionDivider color="#00F0FF" />
 
         {/* 9. Contact */}
         <ContactSection />

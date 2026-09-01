@@ -30,7 +30,7 @@ export default function EducationSection() {
               top: "16px",
               bottom: "16px",
               width: "2px",
-              background: "linear-gradient(180deg, #00F0FF, #8B5CF6, #FF6B35)",
+              background: "linear-gradient(180deg, #00F0FF, rgba(0, 240, 255, 0.15))",
             }}
           />
 
@@ -46,8 +46,8 @@ export default function EducationSection() {
                   height: "24px",
                   borderRadius: "50%",
                   backgroundColor: "var(--bg-primary)",
-                  border: `2px solid ${idx === 0 ? "#00F0FF" : idx === 1 ? "#8B5CF6" : "#FF6B35"}`,
-                  boxShadow: `0 0 12px ${idx === 0 ? "#00F0FF" : idx === 1 ? "#8B5CF6" : "#FF6B35"}`,
+                  border: "2px solid #00F0FF",
+                  boxShadow: "0 0 10px rgba(0, 240, 255, 0.4)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -58,7 +58,7 @@ export default function EducationSection() {
                     width: "8px",
                     height: "8px",
                     borderRadius: "50%",
-                    backgroundColor: idx === 0 ? "#00F0FF" : idx === 1 ? "#8B5CF6" : "#FF6B35",
+                    backgroundColor: "#00F0FF",
                   }}
                 />
               </div>
@@ -84,7 +84,7 @@ export default function EducationSection() {
                     <h3 style={{ fontSize: "1.35rem", fontWeight: 900, color: "var(--text-primary)", lineHeight: 1.3 }}>
                       {item.institution}
                     </h3>
-                    <p style={{ fontSize: "0.95rem", fontWeight: 700, color: idx === 0 ? "#00F0FF" : idx === 1 ? "#8B5CF6" : "#FF6B35", marginTop: "0.25rem" }}>
+                    <p style={{ fontSize: "0.95rem", fontWeight: 700, color: "#00F0FF", marginTop: "0.25rem" }}>
                       {item.degree}
                     </p>
                   </div>
@@ -126,9 +126,9 @@ export default function EducationSection() {
                         fontSize: "0.8rem",
                         fontFamily: "monospace",
                         fontWeight: 700,
-                        color: "#FF6B35",
-                        backgroundColor: "rgba(255,107,53,0.15)",
-                        border: "1px solid rgba(255,107,53,0.35)",
+                        color: "#00F0FF",
+                        backgroundColor: "rgba(0,240,255,0.12)",
+                        border: "1px solid rgba(0,240,255,0.3)",
                         padding: "0.25rem 0.75rem",
                         borderRadius: "9999px",
                       }}

@@ -1,20 +1,21 @@
 @import "tailwindcss";
 
 /* ========================================
-   CSS Custom Properties — Theme System
+   CSS Custom Properties — Cohesive 3-Color Font System
    ======================================== */
 :root {
   /* Light theme */
   --bg-primary: #FAFAFA;
   --bg-secondary: #F1F5F9;
   --bg-card: rgba(255, 255, 255, 0.9);
-  --text-primary: #0F172A;
-  --text-secondary: #64748B;
+  
+  /* 3 Decent Colors for Fonts & Accents */
+  --text-primary: #0F172A;       /* 1. Main Heading & Text: Deep Slate */
+  --text-secondary: #64748B;     /* 2. Subtitle & Body Text: Neutral Slate */
+  --accent-cyan: #0284C7;         /* 3. Primary Accent: Deep Sky Blue */
+  --accent-blue: #0369A1;         /* Harmonious tone */
+  
   --border-color: rgba(226, 232, 240, 0.9);
-  --accent-cyan: #00F0FF;
-  --accent-purple: #8B5CF6;
-  --accent-orange: #FF6B35;
-  --accent-green: #10B981;
   --glass-bg: rgba(255, 255, 255, 0.85);
   --glass-border: rgba(226, 232, 240, 0.9);
   --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -24,13 +25,14 @@
   --bg-primary: #080B11;
   --bg-secondary: #0F172A;
   --bg-card: rgba(15, 23, 42, 0.75);
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
+  
+  /* 3 Decent Colors for Fonts & Accents in Dark Mode */
+  --text-primary: #F8FAFC;       /* 1. Main Heading & Text: Clean Crisp White */
+  --text-secondary: #94A3B8;     /* 2. Subtitle & Body Text: Soft Silver Grey */
+  --accent-cyan: #00F0FF;         /* 3. Signature Accent: Refined Electric Cyan */
+  --accent-blue: #38BDF8;         /* Complementary Soft Sky Blue */
+  
   --border-color: rgba(148, 163, 184, 0.15);
-  --accent-cyan: #00F0FF;
-  --accent-purple: #8B5CF6;
-  --accent-orange: #FF6B35;
-  --accent-green: #10B981;
   --glass-bg: rgba(15, 23, 42, 0.7);
   --glass-border: rgba(148, 163, 184, 0.15);
   --glass-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
@@ -63,8 +65,8 @@ body {
 }
 
 ::selection {
-  background: rgba(0, 240, 255, 0.3);
-  color: #fff;
+  background: rgba(0, 240, 255, 0.25);
+  color: #FFFFFF;
 }
 
 img, svg, video, canvas, audio, iframe, embed, object {
@@ -153,7 +155,7 @@ section {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: clamp(0.7rem, 1.5vw, 0.75rem);
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent-cyan);
   margin-bottom: 0.5rem;
@@ -169,10 +171,11 @@ section {
 }
 
 .section-line-accent {
-  width: 4.5rem;
-  height: 4px;
+  width: 4rem;
+  height: 3px;
   border-radius: 9999px;
-  background: linear-gradient(90deg, #00F0FF, #8B5CF6, #FF6B35);
+  background: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
   margin-bottom: 1rem;
 }
 
@@ -214,7 +217,7 @@ section {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #00F0FF, #8B5CF6, #FF6B35);
+  background: var(--accent-cyan);
   border-radius: 3px;
 }
 
@@ -224,12 +227,6 @@ section {
 @keyframes cursor-blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
-}
-
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
 @keyframes float-1 {

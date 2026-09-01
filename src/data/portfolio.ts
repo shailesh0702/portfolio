@@ -164,25 +164,25 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Web Development",
     icon: "globe",
-    color: "#8B5CF6",
+    color: "#00F0FF",
     skills: ["HTML", "CSS", "JavaScript"],
   },
   {
     title: "Tools & Platforms",
     icon: "tool",
-    color: "#FF6B35",
+    color: "#00F0FF",
     skills: ["Git", "GitHub", "VS Code", "Arduino IDE", "MongoDB"],
   },
   {
     title: "Core Concepts",
     icon: "layers",
-    color: "#10B981",
+    color: "#00F0FF",
     skills: ["DSA", "OOP", "DBMS", "Software Engineering"],
   },
   {
     title: "Hardware / Embedded",
     icon: "cpu",
-    color: "#06B6D4",
+    color: "#00F0FF",
     skills: ["Arduino UNO", "RFID RC522", "Ultrasonic Sensors", "LCD with I2C"],
   },
 ];
@@ -190,24 +190,24 @@ export const skillCategories: SkillCategory[] = [
 // Orbital skills visualization data
 export const orbitalSkills = {
   inner: [
-    { name: "C++", color: "#00599C" },
-    { name: "Python", color: "#3776AB" },
-    { name: "JavaScript", color: "#F7DF1E" },
-    { name: "C", color: "#A8B9CC" },
+    { name: "C++", color: "#00F0FF" },
+    { name: "Python", color: "#38BDF8" },
+    { name: "JavaScript", color: "#00F0FF" },
+    { name: "C", color: "#38BDF8" },
   ],
   middle: [
-    { name: "HTML5", color: "#E34F26" },
-    { name: "CSS3", color: "#1572B6" },
-    { name: "SQL", color: "#00758F" },
-    { name: "MongoDB", color: "#47A248" },
-    { name: "Git", color: "#F05032" },
+    { name: "HTML5", color: "#00F0FF" },
+    { name: "CSS3", color: "#38BDF8" },
+    { name: "SQL", color: "#00F0FF" },
+    { name: "MongoDB", color: "#38BDF8" },
+    { name: "Git", color: "#00F0FF" },
   ],
   outer: [
-    { name: "Arduino UNO", color: "#00979D" },
-    { name: "RFID RC522", color: "#FF6B35" },
-    { name: "Ultrasonic", color: "#10B981" },
-    { name: "LCD I2C", color: "#06B6D4" },
-    { name: "DSA & OOP", color: "#8B5CF6" },
+    { name: "Arduino UNO", color: "#00F0FF" },
+    { name: "RFID RC522", color: "#38BDF8" },
+    { name: "Ultrasonic", color: "#00F0FF" },
+    { name: "LCD I2C", color: "#38BDF8" },
+    { name: "DSA & OOP", color: "#00F0FF" },
   ],
 };
 
@@ -289,7 +289,7 @@ export const certifications: Certification[] = [
     issueDate: "2025",
     credentialId: "7497057853SS",
     verifyLink: "https://learn.saylor.org/pluginfile.php/1/tool_certificate/issues/1770317198/7497057853SS.pdf",
-    color: "#00599C",
+    color: "#00F0FF",
     badgeText: "Saylor Verified",
   },
   {
@@ -298,7 +298,7 @@ export const certifications: Certification[] = [
     issueDate: "March 2026",
     credentialId: "INFY-SPB-DSBD26",
     verifyLink: "https://verify.onwingspan.com",
-    color: "#0070BA",
+    color: "#00F0FF",
     badgeText: "Infosys Certified",
   },
   {
@@ -307,7 +307,7 @@ export const certifications: Certification[] = [
     issueDate: "2026",
     credentialId: "INFY-SPB-CPP26",
     verifyLink: "https://verify.onwingspan.com",
-    color: "#0070BA",
+    color: "#00F0FF",
     badgeText: "Infosys Certified",
   },
 ];
@@ -327,7 +327,7 @@ export const achievements: Achievement[] = [
     description:
       "Engineered and fully documented an embedded hardware prototype integrating dual ultrasonic sensors, MFRC522 RFID authentication, 16x2 I2C LCD, and buzzer alerts.",
     icon: "code",
-    color: "#FF6B35",
+    color: "#00F0FF",
     badge: "Hardware Innovation",
   },
   {
@@ -335,7 +335,7 @@ export const achievements: Achievement[] = [
     description:
       "Conducted interactive Python programming sessions as part of a Community Development Project, introducing peers to computational logic and coding best practices.",
     icon: "star",
-    color: "#8B5CF6",
+    color: "#00F0FF",
     badge: "Community Impact",
   },
 ];

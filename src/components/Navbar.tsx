@@ -76,7 +76,7 @@ const Navbar = () => {
               width: "36px",
               height: "36px",
               borderRadius: "10px",
-              background: "linear-gradient(135deg, #00F0FF, #8B5CF6, #FF6B35)",
+              background: "linear-gradient(135deg, #00F0FF, #0284C7)",
               color: "#FFFFFF",
               display: "flex",
               alignItems: "center",
@@ -170,7 +170,7 @@ const Navbar = () => {
               fontWeight: 700,
               fontSize: "0.8rem",
               color: "#FFFFFF",
-              background: "linear-gradient(135deg, #00F0FF, #8B5CF6)",
+              background: "linear-gradient(135deg, #00F0FF, #0284C7)",
               textDecoration: "none",
               boxShadow: "0 0 14px rgba(0, 240, 255, 0.3)",
             }}
